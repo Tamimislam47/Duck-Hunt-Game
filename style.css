@@ -1,0 +1,109 @@
+* {
+    padding: 0;
+    margin: 0;
+    overflow: hidden; 
+    cursor: url(/duck-folder/img/aim.png), text;
+
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(/duck-folder/img/bg.png);
+    background-repeat: repeat-x;
+    background-position: bottom left;
+    z-index: -1;
+}
+
+.score {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    height: 50px;
+    background-color: gainsboro;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+
+.score::after {
+    content: counter(point);
+}
+
+input:checked {
+    counter-increment: point;
+}
+
+.score::before {
+    content: "score : ";
+    margin-right: 8px;
+}
+
+@keyframes move {
+    0% {
+        left: 150%;
+        top: 10%;
+    }
+    25% {
+        left: 80%;
+        top: 50%;
+    }
+    50% {
+        left: 50%;
+        top: 30%;
+    }
+    75% {
+        left: 40%;
+        top: 50%;
+    }
+    100% {
+        left: -50%;
+        top: 10%;
+    }
+}
+
+input + label {
+    left: -100px;
+    position: absolute;
+    width: 36px;
+    height: 34px;
+    /* background-color: aliceblue; */
+    z-index: 5;
+    background-image: url(/duck-folder/img/duck_black.png);
+    background-position: -138px 0;
+    display: block;
+}
+
+input:checked + label {
+    opacity: 0;
+    z-index: -5;
+    rotate:90deg;
+    transition: 0.5s;
+    position: absolute;
+    display: block;
+}
+
+.duck:nth-last-of-type(1) {
+    animation: move 10s linear 1s infinite;
+    cursor: url(/duck-folder/img/aim.png), text;
+}
+.duck:nth-last-of-type(2) {
+    animation: move 15s linear 4s infinite;
+    cursor: url(/duck-folder/img/aim.png), text;
+}
+
+.duck:nth-last-of-type(3) {
+    animation: move 20s linear 7s infinite;
+    cursor: url(/duck-folder/img/aim.png), text;
+}
+
+.duck:nth-last-of-type(4) {
+    animation: move 25s linear 10s infinite;
+    cursor: url(/duck-folder/img/aim.png), text;
+}
+
+.duck:nth-last-of-type(5) {
+    animation: move 30s linear 15s infinite;
+    cursor: url(/duck-folder/img/aim.png), text;
+}
