@@ -40,7 +40,7 @@ input:checked {
     margin-right: 8px;
 }
 
-@keyframes move {
+@keyframes move {  /*for duck fly*/
     0% {
         left: 150%;
         top: 10%;
@@ -63,27 +63,26 @@ input:checked {
     }
 }
 
-input + label {
+input + label { /*combain input label*/
     left: -100px;
     position: absolute;
     width: 36px;
     height: 34px;
-    /* background-color: aliceblue; */
     z-index: 5;
     background-image: url(/duck-folder/img/duck_black.png);
     background-position: -138px 0;
     display: block;
 }
 
-input:checked + label {
+input:checked + label { /*when duck die*/
     opacity: 0;
     z-index: -5;
     rotate:90deg;
     transition: 0.5s;
     position: absolute;
-    display: block;
 }
 
+/*duck fly animation start*/
 .duck:nth-last-of-type(1) {
     animation: move 10s linear 1s infinite;
     cursor: url(/duck-folder/img/aim.png), text;
@@ -104,6 +103,7 @@ input:checked + label {
 }
 
 .duck:nth-last-of-type(5) {
-    animation: move 30s linear 15s infinite;
+    animation: move 30s linear 13s infinite;
     cursor: url(/duck-folder/img/aim.png), text;
 }
+/*duck fly animation end*/
